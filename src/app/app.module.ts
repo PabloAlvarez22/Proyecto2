@@ -9,6 +9,11 @@ import { LoginComponent } from './components/login/login.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { RecomendationsComponent } from './components/recomendations/recomendations.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,13 @@ import { RegisterComponent } from './components/register/register.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    SimpleNotificationsModule.forRoot({position:['bottom', 'center']}),
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
