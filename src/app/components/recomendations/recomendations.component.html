@@ -1,1 +1,124 @@
-<p>recomendations works!</p>
+<div class="w-100 row pt-3">
+    <div class="col-md-2">
+
+    </div>
+    
+</div>
+<div class="w-100 row m-0 image pt-5" style="align-items: center;" >
+    <div class="col-md-6" >
+        
+        <div class="w-100 text-center">
+            <h2 class="title" style="margin-bottom: 4rem; line-height: 3rem;">{{firstShoe.name}}</h2>
+            <span style="color:whitesmoke!important">Prueba los nuevos zapatos creados para ti por {{firstShoe.brand}}</span>
+        </div>
+        
+        <div class="w-100 mt-2 mb-5 d-flex justify-content-center mt-4">
+            <button mat-raised-button class="mr-2" color="primary">
+                <mat-icon>shopping_bag</mat-icon>
+                Buy Now
+            </button>
+            <button mat-raised-button  style="background-color: transparent !important; color:whitesmoke; background-color: rgba(245, 245, 245, 0.385);">
+                With ${{firstShoe.price}} with trade-in
+            </button>
+        </div>
+    </div>
+    <div class="col-md-6 mb-5" >
+        <img src="{{uri+'shoes/getImgShoes/'+firstShoe.imgShoe}}" class="img-fluid" alt="">
+    </div>
+</div>
+<div class="w-100 text-center mt-5 mb-5">
+    <span>EXPLORE AWESOME PRODUCTS</span>
+    <h2>RECOMMENDED FOR YOU</h2>
+</div>
+<div class="w-100 image2 row pb-5 pt-5 m-0" style="align-items: center;">
+    <div class="col-md-6">
+        <h2 style="color:whitesmoke; font-size: 2rem;">Sneakers Never Run Out Of Style Get 50% Off Sitewide</h2>
+    </div>
+    <div class="col-md-6" style="text-align: center;">
+        <button mat-raised-button   style="background-color: transparent !important; color:whitesmoke; background-color: rgba(245, 245, 245, 0.385);">
+            Start Shopping
+        </button>
+    </div>
+</div>
+<div class="w-100 row justify-content-center mt-2" >
+    <mat-form-field class="col-md-10" appearance="fill">
+        <mat-label>Search for...</mat-label>
+        <input matInput placeholder="Mercurial" name="search" id="search" [(ngModel)]="search">
+    </mat-form-field>
+</div>
+<div class="w-100 text-center mt-5 mb-5">
+    <h2>RECOMENDADOS POR MARCA</h2>
+</div>
+<div class="row w-100 m-0 justify-content-center">
+    <div class="col-md-3 m-2 row" *ngFor="let shoe of shoesBrand | pipeShoe: search" style="background-color: rgba(246, 240, 240, 0.684); align-items: center;">
+        <img src="{{uri+'shoes/getImgShoes/'+shoe.imgShoe}}" style="max-height:400px" class="img-fluid">
+        <div class="w-100 row p-2">
+            <h2 class="col-md-8">{{shoe.name}}</h2>
+            <div class="col-md-4">
+                <button mat-raised-button>${{shoe.price}}</button>
+            </div>
+            <button (click)="setRelation(shoe)" style="align-items: end;" mat-mini-fab color="primary" >
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="w-100 text-center mt-5 mb-5">
+    <h2>RECOMENDADOS POR ESTILO</h2>
+</div>
+<div class="row w-100 m-0 justify-content-center">
+    <div class="col-md-3 m-2 row" *ngFor="let shoe of shoesStyle | pipeShoe: search" style="background-color: rgba(246, 240, 240, 0.684); align-items: center;">
+        <img src="{{uri+'shoes/getImgShoes/'+shoe.imgShoe}}" style="max-height:400px" class="img-fluid">
+        <div class="w-100 row p-2">
+            <h2 class="col-md-8">{{shoe.name}}</h2>
+            <div class="col-md-4">
+                <button mat-raised-button>${{shoe.price}}</button>
+            </div>
+            <button (click)="setRelation(shoe)"  style="align-items: end;" mat-mini-fab color="primary" >
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<div class="w-100 text-center mt-5 mb-5">
+    <h2>RECOMENDADOS PORQUE TE GUSTARON ALGUNOS ZAPATOS SIMILARES</h2>
+</div>
+<div class="row w-100 m-0 justify-content-center">
+    <div class="col-md-3 m-2 row" *ngFor="let shoe of shoesFavoriteByMaterialSole | pipeShoe: search" style="background-color: rgba(246, 240, 240, 0.684); align-items: center;">
+        <img src="{{uri+'shoes/getImgShoes/'+shoe.imgShoe}}" style="max-height:400px" class="img-fluid">
+        <div class="w-100 row p-2">
+            <h2 class="col-md-8">{{shoe.name}}</h2>
+            <div class="col-md-4">
+                <button mat-raised-button>${{shoe.price}}</button>
+            </div>
+            <button (click)="setRelation(shoe)"  style="align-items: end;" mat-mini-fab color="primary" >
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<div class="w-100 text-center mt-5 mb-5">
+    <h2>TUS FAVORITOS</h2>
+</div>
+<div class="row w-100 m-0 justify-content-center">
+    <div class="col-md-3 m-2 row" *ngFor="let shoe of shoesFavorite | pipeShoe: search" style="background-color: rgba(246, 240, 240, 0.684); align-items: center;">
+        <img src="{{uri+'shoes/getImgShoes/'+shoe.imgShoe}}" style="max-height:400px" class="img-fluid">
+        <div class="w-100 row p-2">
+            <h2 class="col-md-8">{{shoe.name}}</h2>
+            <div class="col-md-4">
+                <button mat-raised-button>${{shoe.price}}</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

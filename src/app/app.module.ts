@@ -15,6 +15,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorService } from './services/interceptor/interceptor.service';
+import { PipeShoePipe } from './pipes/pipeShoe/pipe-shoe.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InterceptorService } from './services/interceptor/interceptor.service';
     LoginComponent,
     MyAccountComponent,
     RecomendationsComponent,
-    RegisterComponent
+    RegisterComponent,
+    PipeShoePipe
   ],
   imports: [
     BrowserModule,

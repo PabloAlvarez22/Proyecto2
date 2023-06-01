@@ -4,12 +4,14 @@ import { RecomendationsComponent } from './components/recomendations/recomendati
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
+import { RedirectGuard } from './guards/redirect/redirect.guard';
+import { ClientGuard } from './guards/client/client.guard';
 
 const routes: Routes = [
-  {path:"recommendations", component:RecomendationsComponent},
-  {path:"",  component:LoginComponent},
-  {path:"register",  component:RegisterComponent},
-  {path:"myaccount",component:MyAccountComponent}
+  {path:"recommendations", canActivate:[ClientGuard], component:RecomendationsComponent},
+  {path:"", canActivate:[RedirectGuard], component:LoginComponent},
+  {path:"register", canActivate:[RedirectGuard], component:RegisterComponent},
+  {path:"myaccount", canActivate:[ClientGuard],component:MyAccountComponent}
 ];
 
 @NgModule({
