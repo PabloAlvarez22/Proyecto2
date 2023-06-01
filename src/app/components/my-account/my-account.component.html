@@ -1,0 +1,65 @@
+<div class="container-fluid h-custom pt-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="../../../assets/pexels-mnz-1598505.jpg"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form>
+            <mat-form-field class="col-md-6" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" name="name" id="name" [(ngModel)]="user.name">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6" appearance="fill">
+                <mat-label>Age</mat-label>
+                <input matInput type="number"  name="age" id="age" [(ngModel)]="user.age">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-12" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" name="email" id="email" [(ngModel)]="user.email">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-12" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="password" id="password" [(ngModel)]="user.password">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6" appearance="fill">
+                <mat-label>Tipos de zapatos que te gustan</mat-label>
+                <mat-select name="typeShoes" id="typeShoes" [(ngModel)]="user.typeShoes">
+                  <mat-option value="Casual">Casual</mat-option>
+                  <mat-option value="Sport">Sport</mat-option>
+                  <mat-option value="Formal">Formal</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6" appearance="fill">
+                <mat-label>Marca de preferencia</mat-label>
+                <mat-select name="brand" id="brand" [(ngModel)]="user.brand">
+                  <mat-option value="Adidas">Adidas</mat-option>
+                  <mat-option value="Nike">Nike</mat-option>
+                  <mat-option value="Puma">Puma</mat-option>
+                  <mat-option value="Hugo Boss">Hugo Boss</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-12" appearance="fill">
+                <mat-label>Genero:</mat-label>
+                <mat-select name="genre" id="genre" [(ngModel)]="user.genre">
+                  <mat-option value="MALE">Masculino</mat-option>
+                  <mat-option value="FEMALE">Femenino</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="button" (click)="updateUser()" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Actualizar Cuenta</button>
+                
+            </div>
+
+        </form>
+      </div>
+    </div>
+</div>
